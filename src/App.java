@@ -1,8 +1,21 @@
+import models.Persona;
 import trees.IntTree;
-
+import trees.Tree;
 public class App {
     public static void main(String[] args) throws Exception {
-        runIntTree();
+        //runIntTree();
+        runTree();
+    }
+    private static void runTree(){
+        Tree<Persona> tree = new Tree<Persona>();
+        tree.insert(new Persona("Pablo", 21));
+        tree.insert(new Persona("Maria", 23));
+        tree.insert(new Persona("Ana", 25));
+        tree.insert(new Persona("Pedro", 23));
+        tree.insert(new Persona("Luis", 19)); 
+        System.out.println("In Order: ");
+        tree.inOrder();
+        tree.searchByAge(23);
     }
     private static void runIntTree(){
         IntTree tree= new IntTree();
