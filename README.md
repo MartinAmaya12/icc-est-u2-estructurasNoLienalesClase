@@ -38,9 +38,9 @@ size() debe ser O(1). Para cumplirlo, el árbol debe mantener un contador intern
 
 ## Evidencias
 ### Captura 1
-Inserta aquí la captura del código o de la ejecución.
+![alt text](assets/Evidencia1.png)
 
 
 ### Captura 2 
-Inserta aquí una segunda captura si aplica.
-- Archivo: `assets/captura-2.png`
+
+![alt text](assets/Evidencia2.png)
