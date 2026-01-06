@@ -39,25 +39,40 @@ public class Tree<T extends Comparable<T>>{
         inOrderRecursive(node.getRight());
     }
 
-    public T searchByAge(T age){
-        System.out.println("Searching for age: " + age);
-        return searchByAgeRecursive(root, age);
+    public T search(T value){
+        return searchRecursive(root, value);
     }
 
-    private T searchByAgeRecursive(Node<T> current, int age){
+    private T searchRecursive(Node<T> current, T value){
         if(current == null){
-            return;
+            return null;
+        }
+        if (value.compareTo(current.getValue()) < 0) {
+            return searchRecursive(current.getLeft(), value);
+        }
+        else if (value.compareTo(current.getValue()) > 0) {
+            return searchRecursive(current.getRight(), value);
+        }
+        return current.getValue();
+       
+    }
+
+     public T searchByAge(int edad) {
+        return searchByAgeRecursive(root, edad);
+    }
+
+    private T searchByAgeRecursive(Node<T> current, int edad) {
+        if (current == null) {
+            return null;
         }
         Persona persona = (Persona) current.getValue();
-        if(persona.getAge() == age){
-            System.out.println(persona);
+        if(persona.getAge() == edad){
+            return current.getValue();
         }
-        if(persona.getAge() > age){
-            searchByAgeRecursive(current.getLeft(), age);
+        if(persona.getAge() > edad){
+            return searchByAgeRecursive(current.getLeft(), edad);
+        } else {
+            return searchByAgeRecursive(current.getRight(), edad);
         }
-        else{
-            searchByAgeRecursive(current.getRight(), age);
-        }
-       
     }
 }

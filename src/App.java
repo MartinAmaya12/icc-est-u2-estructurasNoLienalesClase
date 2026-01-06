@@ -15,7 +15,12 @@ public class App {
         tree.insert(new Persona("Luis", 19)); 
         System.out.println("In Order: ");
         tree.inOrder();
-        tree.searchByAge(23);
+        Persona encontrada = tree.searchByAge(23);
+        if (encontrada != null) {
+            System.out.println("\nPersona encontrada: " + encontrada);
+        } else {
+            System.out.println("\nPersona no encontrada con esa edad.");
+        }
     }
     private static void runIntTree(){
         IntTree tree= new IntTree();
