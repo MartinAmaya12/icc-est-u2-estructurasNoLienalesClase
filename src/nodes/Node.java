@@ -5,6 +5,8 @@ public class Node<T> {
     private Node<T> left;
     private Node<T> right;
 
+    
+
     public Node(T value) {
         this.value = value;
         this.left = null;
