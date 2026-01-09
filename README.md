@@ -93,3 +93,38 @@ InOrder
 #### Evidencia 2 - Salida por Consola
 **Evidencia salida por consola**
 ![alt text](assets/Evidencia3.png)
+
+## Práctica de Graphs-Implementación de Grafos con Strings
+
+### Fecha
+2026-1-08
+### Objetivo
+#### Implementar un Grafo  en Java usando:
+
+Node<T>
+Graph<T>
+### Requisitos técnicos
+Implementar la clase genérica:
+
+class Graph<T>
+Implementar la clase:
+
+class Node<T>
+ 
+#### Implementaciones obligatorias
+Implementación con objetos String
+Entregable
+Repositorio que contenga:
+
+Código fuente actualizado
+Carpeta assets/ con evidencias
+README actualizado con la sección de esta práctica
+
+### Evidencias Obligatorias
+#### Captura 1
+**Evidencia código fuente de la práctica de Graphs-- Implementación de Grafos con Strings**
+![alt text](assets/Evidencia7.png)
+
+#### Captura 2
+**Evidencia salida por consola de la práctica de Graphs-- Implementación de Grafos con Strings**
+![alt text](assets/Evidencia6.png)

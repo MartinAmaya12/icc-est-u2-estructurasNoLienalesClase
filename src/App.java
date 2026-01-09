@@ -1,10 +1,14 @@
 import models.Persona;
+import nodes.Node;
 import trees.IntTree;
 import trees.Tree;
+import trees.graph.Graphs;
+import java.util.List;
 public class App {
     public static void main(String[] args) throws Exception {
-        //runIntTree();
+        runIntTree();
         runTree();
+        runGraph();
     }
     private static void runTree(){
         Tree<Persona> tree = new Tree<Persona>();
@@ -35,6 +39,30 @@ public class App {
         System.out.println("In Order");
         tree.inOrder();
         System.out.println("Size: " + tree.size());
+    }
+
+     public static void runGraph(){
+        Graphs<String> graph = new Graphs<String>();
+
+        Node<String> node1 = new Node<String>("A");
+        Node<String> node2 = new Node<String>("B");
+        Node<String> node3 = new Node<String>("C");
+        Node<String> node4 = new Node<String>("D");
+
+        graph.addNode(node1);
+        graph.addEdge(node1, node2);
+        graph.addEdge(node1, node3);
+        graph.addEdge(node2, node4);
+        graph.addEdge(node3, node4);
+
+        graph.printGraph();
+
+        List<Node<String>> neighbors = graph.getNeighbors(node1);   
+        System.out.print("Neighbors de A: ");
+        for(Node<String> neighbor : neighbors){
+            System.out.print(neighbor + " ");
+        }
+        System.out.println();
     }
     
 }
