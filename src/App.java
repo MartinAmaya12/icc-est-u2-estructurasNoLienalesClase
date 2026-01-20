@@ -2,8 +2,9 @@ import models.Persona;
 import nodes.Node;
 import trees.IntTree;
 import trees.Tree;
-import trees.graph.Graphs;
+import models.graphs.Graphs;
 import java.util.List;
+
 public class App {
     public static void main(String[] args) throws Exception {
         runIntTree();
@@ -65,4 +66,24 @@ public class App {
         System.out.println();
     }
     
+
+    public static void runGraphRecorridos(){
+        Graphs<Persona> graph = new Graphs<Persona>();
+        Persona pC23 = new Persona("Carlos", 23);
+        Persona pL18 = new Persona("Luis", 18);
+        Persona pA23 = new Persona("Alan", 23);
+        Persona pA30 = new Persona("Alan", 30);
+        Persona pJ25 = new Persona("Juan", 25);
+        Persona pA20 = new Persona("Ana", 20);
+
+        graph.addEdge(new Node<>(pC23), new Node<>(pL18));
+        graph.addEdge(new Node<>(pC23), new Node(pA23));
+        graph.addEdge(new Node<>(pL18), new Node<>(pA30));
+        graph.addEdge(new Node<>(pA23), new Node<>(pJ25));
+        
+        graph.addConocido(new Node<>(pJ25), new Node<>(pA20));
+        graph.addConocido(new Node<>(pA20), new Node<>(pA30));
+        
+
+    }
 }
